@@ -2,14 +2,14 @@ const products = [
     {
         id: 1,
         name: 'Baby Yoda',
-        description: 'Baby Yoda is a character in the Star Wars universe, first appearing in the 2019 Disney+ television series The Mandaloria ',
+        description: 'Baby Yoda is a character in the Star Wars universe, first appearing in the 2019 Disney+ television series The Mandalorian. He is an infant member of the same unnamed alien species as the Star Wars characters Yoda and Yaddle, with whom he shares a strong ability in the Force.',
         price: 100,
         image: 'img/baby-yoda.svg',
     },
     {
         id: 2,
         name: 'Banana',
-        description: 'A banana is an alongated, edible fruit - botanically ',
+        description: 'A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called "plantains", distinguishing them from dessert bananas.',
         price: 10,
         image: 'img/banana.svg'
     },
@@ -29,31 +29,27 @@ const products = [
     },
 ];
 
-function renderProducts(products) {
+renderProduct(products);
+
+function renderProduct(products) {
     const productsContainer = document.querySelector('.products__list');
     productsContainer.innerHTML = '';
     for (const product of products) {
         productsContainer.innerHTML += 
-            <article class="product-card">
-            <img src="${product.image}" alt="${product.title}">
-            <h3 class="product-card__h3">Baby Yoda</h3>
-            <p class="product-card__description">Lorem ipsum <a href="#">dolor</a> sit amet consectetur, adipisicing
-                elit.
-                Porro
-                fuga autem possimus eveniet facere, non minus magnam obcaecati,
-                tenetur recusandae, corporis itaque suscipit. Vero illo nulla
-                asperiores laudantium tempore porro!
-            </p>
-            <div class="product-card__buttons">
-                <button class="product-card__buttons-info button button-card">
-                    Info
-                </button>
-                <button class="product-card__buttons-buy button button-card">
-                    Buy
-                </button>
-            </div>
-        </article>
-        ;
-    
-
+            `<article class="product-card">
+                <img src="${product.image}" alt="${product.name}">
+                <h3 class="product-card__h3">${product.name}</h3>
+                <p class="product-card__description">
+                ${product.description}
+                </p>
+                <div class="product-card__buttons">
+                    <button class="product-card__buttons-info button button-card">
+                        Info
+                    </button>
+                    <button class="product-card__buttons-buy button button-card">
+                        Buy - ${product.price}
+                    </button>
+                </div>
+            </article>`;
+    }
 }

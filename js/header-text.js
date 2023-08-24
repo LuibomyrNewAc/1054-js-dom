@@ -1,35 +1,44 @@
-// DOM - Documemt Object Model
+// DOM - Document Object Model
 // document
 
 const greetings = [
-    'Hey',
-    'Bonjour',
+    'Hello',
+    'Привіт',
     'Hola',
-    'Olá',
-    'Namastē',
+    'Bonjour',
+    'Ciao',
     'Hallo',
-    'Asalaam alaikum',
-    'Nǐn hǎo',
-    'Nǐ hǎo',
-    'Konnichiwa',
-    'Shalom aleichem',
-    'God dag',
-    'Kalimera',
-    'Salve',
+    'Olá',
+    'Ahoj',
+    'Hei',
+    'Salut',
+    'Selam',
+    'Cześć',
+    'Namaste',
+    'Sveiki',
     'Merhaba',
-    'Jambo',
-    'Ngiyakwemukela'
+    'Здраво',
+    'Χαίρετε',
+    '你好',
+    'こんにちは',
+    '안녕하세요',
+    'สวัสดีครับ',
+    'Xin chào',
+    'Salam',
+    'Sawubona'
 ];
-function randomEI (array) {
+
+function randomEl(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
-// const userName = prompt ('What is your name?')
+// const userName = prompt('What is your name?');
 
 const title = document.querySelector('.header__title');
 title.style.color = 'white';
 
-function updateTitle () {
-    title.innerText = randomEI(greetings);
+function updateTitle() {
+    title.innerText =  randomEl(greetings);
 }
+
 setInterval(updateTitle, 2000);
